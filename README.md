@@ -29,9 +29,8 @@ Suno Music Producer is a Codex plugin that helps people write original lyrics, c
 The plugin is available from the stable `main` branch. Add the repository as a marketplace:
 
     codex plugin marketplace add warengonzaga/suno-music-producer
-    codex plugin add suno-music-producer@suno-music-producer
 
-Start a new Codex chat to use the skill and complete Suno authorization if prompted. To refresh it after an update, run `codex plugin marketplace upgrade suno-music-producer`.
+Open Codex's **Plugins Directory**, select the Suno Music Producer marketplace, and install the plugin. Start a new chat to use the skill and complete Suno authorization if prompted. To refresh it after an update, run `codex plugin marketplace upgrade suno-music-producer`.
 
 ### First production request
 
