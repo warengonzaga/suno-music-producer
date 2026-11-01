@@ -3,16 +3,16 @@
 ![Suno Music Producer banner — Faithful Suno production, guided by your workflow](https://ghrb.waren.build/render/banner?header=Suno+Music+Producer&subheader=Faithful+Suno+production%2C+guided+by+your+workflow&bg=090D24-33225F&color=FFFFFF&subheadercolor=D9E8FF&headerfont=Inter&subheaderfont=Inter&support=true&stats=false)
 <!-- Created with GitHub Repo Banner by Waren Gonzaga: https://ghrb.waren.build -->
 
-Suno Music Producer is a Codex plugin for creating and reimagining songs through Suno. It bundles the Suno MCP connection with a reusable skill that follows your production workflow for source checks, cover preparation, and generation.
+Suno Music Producer is a Codex plugin that helps people create and reimagine music through Suno. It bundles the Suno MCP connection with a reusable skill that learns preferences from each user's request, project, and feedback instead of imposing one artist's preset.
 
 ## ✨ Features
 
 - Bundles Suno's remote MCP endpoint at https://api.suno.com/mcp with the production skill.
-- Builds one comma-separated Style prompt with positive instructions and dash-prefixed exclusions, within Suno's 1,000-character limit.
-- Adds song-specific production directions to each bracketed lyrics section, including vocals, instruments, energy, effects, and restrictions.
+- Builds Style prompts and handles exclusions in the format each user prefers and Suno supports.
+- Creates song-specific lyrics section directions, from concise guidance to detailed vocals, instruments, energy, effects, and restrictions.
 - For covers, preserves the approved lyrics, melody, composition, arrangement, sections, BPM, key, and ad-libs unless you request changes.
-- Checks the existing source clip and workspace, explicitly selects Suno v6, verifies the applicable artist voice (including Stella Pinoy Pop for Siren of the Stars), checks supported controls, and reviews the full prompt before spending generation credits.
-- Includes the Supernova (Reimagined) example at 120 BPM in Bb major.
+- Checks existing source clips and workspaces, discovers the project's model and voice preferences, verifies current Suno options, and checks the complete brief before spending generation credits.
+- Includes Supernova (Reimagined) as one project-specific example at 120 BPM in Bb major; those settings are not global defaults.
 
 ## 🚀 Getting Started
 
@@ -21,36 +21,33 @@ Suno Music Producer is a Codex plugin for creating and reimagining songs through
 - Codex with plugin marketplace support.
 - A Suno account and authorization for the bundled MCP server, if prompted by Codex.
 
-### Install from the dev branch
+### Install
 
-The plugin has been merged to dev and is available there while awaiting a release to main. Add the repository as a marketplace:
-
-    codex plugin marketplace add warengonzaga/suno-music-producer@dev
-
-Restart the Codex desktop app, open **Plugins Directory**, select the Suno Music Producer marketplace, and install Suno Music Producer. Complete Suno authorization if prompted. Confirm the plugin and its Suno connection appear in Codex.
-
-After the feature is released to main, use the stable marketplace source:
+The plugin is available from the stable `main` branch. Add the repository as a marketplace:
 
     codex plugin marketplace add warengonzaga/suno-music-producer
+    codex plugin add suno-music-producer@suno-music-producer
+
+Start a new Codex chat to use the skill and complete Suno authorization if prompted. To refresh it after an update, run `codex plugin marketplace upgrade suno-music-producer`.
 
 ### First production request
 
-Ask Codex to use Suno Music Producer for a song or cover. For a cover, identify the source track and preserve the approved lyrics and arrangement. The skill will check the existing workspace and source, verify the current model and voice options, and prepare the full prompt before generation.
+Ask Codex to use Suno Music Producer for a song or cover. Describe your goals and any preferences you already have; for a cover, identify the source track and what should be preserved. The skill will use available project context to shape a workflow for you and flag only choices that need your input.
 
 ## 📖 Usage
 
 Example request:
 
-    Use Suno Music Producer to reimagine Supernova (Reimagined) as a cover. Keep 120 BPM and Bb major, preserve the lyrics, melody, composition, arrangement, section order, and ad-libs, use Suno v6 and Stella Pinoy Pop if available, and show me the full Style prompt and lyrics for review before generation.
+    Use Suno Music Producer to create or reimagine a song for my project. Check my existing workspace and source if relevant, follow my approved preferences, prepare complete lyrics and section directions, recommend suitable available Suno options, and generate only when I ask.
 
-The skill prepares a combined Style prompt, detailed section headers, complete lyrics, and recommended supported controls. It verifies a generated clip's status and reports a song link only when Suno returns one and the result is playable.
+The skill discovers your preferred Style and exclusions format, prepares complete lyrics with project-specific section directions, and recommends supported controls. It verifies a generated clip's status and reports a song link only when Suno returns one and the result is playable.
 
-See the [Supernova production example](plugins/suno-music-producer/skills/suno-music-producer/references/supernova-example.md) for the canonical format.
+See the [Supernova production example](plugins/suno-music-producer/skills/suno-music-producer/references/supernova-example.md) for one user's format; its settings are example-specific, not defaults.
 
 ## 📚 Documentation
 
 - [Suno Music Producer skill](plugins/suno-music-producer/skills/suno-music-producer/SKILL.md) — workflow, cover preservation, prompt construction, preflight, and result verification.
-- [Supernova (Reimagined) reference](plugins/suno-music-producer/skills/suno-music-producer/references/supernova-example.md) — combined Style prompt and full section-by-section lyrics example.
+- [Supernova (Reimagined) reference](plugins/suno-music-producer/skills/suno-music-producer/references/supernova-example.md) — an example combined Style prompt and full section-by-section lyrics for one specific project.
 - [Codex plugin marketplace documentation](https://developers.openai.com/plugins/build/plugins) — adding a repository marketplace and installing a plugin.
 - [Clean README specification](https://github.com/wgtechlabs/clean-readme/blob/main/SPECIFICATION.md) — README structure and conformance guidance.
 

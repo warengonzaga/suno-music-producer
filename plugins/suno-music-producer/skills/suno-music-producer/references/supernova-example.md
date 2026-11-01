@@ -1,30 +1,30 @@
-# Supernova (Reimagined): canonical production reference
+# Supernova (Reimagined): illustrative production example
 
-This reference uses the user's existing Suno clip as the canonical example:
+This reference documents one user's existing Suno clip as a project-specific example. None of its artist, voice, tempo, key, model, prompt format, lyrics, or controls are global defaults for other users or projects:
 
 - **Title:** Supernova (Reimagined)
 - **Clip ID:** `1098fe23-e6da-4a84-b6c7-63f3853a0088`
 - **Song URL:** https://suno.com/song/1098fe23-e6da-4a84-b6c7-63f3853a0088
 - **Status at reference check:** complete
 - **Approved tempo/key:** 120 BPM, Bb major
-- **Voice for Siren of the Stars:** Stella Pinoy Pop; verify the current ready voice ID each time
-- **Target model for new generations:** Suno v6; explicitly verify and select each time
+- **Voice in the Siren of the Stars example:** Stella Pinoy Pop; use it only for that project when requested or already approved, and verify the current ready voice ID
+- **Model in the user's example workflow:** Suno v6; verify current availability, but do not treat it as a default for other users
 
 The clip was retrieved through Suno MCP and returned as complete. The retrieved metadata included its lyrics and positive Style, but did not expose the model or voice used for this source clip. Verify model and voice independently for every new generation. Its existing positive Style was: “Melodic synth-pop electronica, polished crystal-clear stereo with lush spacious textures, 120 BPM breezy bounce, sweet airy youthful solo female vocals with intimate phrasing and soaring choruses, sparkling arpeggios, shimmering digital plucks, bright marimba and tropical mallet synths, airy leads, warm floating pads, smooth bouncy bass, punchy kick, crisp snares, syncopated hi-hats and light tropical percussion; intro-only melodic scratching with chopped, retriggered vocal samples; sunlit beach and clear-ocean atmosphere.”
 
-The combined prompt below keeps that song's style identity and approved production, restores the key from the lyrics, and appends the user's requested exclusions in the required order. It is a reusable reference, not proof that every listed exclusion was in the original generation.
+The combined prompt below demonstrates one user's chosen Style format. It keeps that song's style identity and approved production, restores the key from the lyrics, and appends requested exclusions. It is not a general default or proof that every exclusion appeared in the original generation.
 
-## Canonical combined Style prompt
+## Example combined Style prompt (one user's format)
 
 ```text
 Melodic synth-pop electronica, polished crystal-clear stereo with lush spacious textures, 120 BPM, Bb major, sweet airy youthful solo female vocals with intimate phrasing and soaring choruses, sparkling arpeggios, shimmering digital plucks, bright marimba and tropical mallet synths, airy leads, warm floating pads, smooth bouncy bass, punchy kick, crisp snares, syncopated hi-hats, light tropical percussion, breezy bounce, intro-only melodic scratching with chopped retriggered vocal samples, sunlit beach and clear-ocean atmosphere, -male vocals, -deep female vocals, -duets, -choir, -rap, -acoustic guitar, -brass instruments, -aggressive EDM, -trap beats, -robotic lead vocals
 ```
 
-Keep the complete Style prompt under 1,000 characters. Put it in Suno's main Style field. Do not automatically populate the separate Excluded Styles / `negative_style` field.
+This example combines positive instructions and dash-prefixed exclusions in one Style prompt. Other users may prefer Suno's separate Excluded Styles field. Follow the current user's preference and the live Suno fields and limits.
 
 ## Lyrics format: section-specific Suno production style
 
-This is the user's preferred lyrics formatting example. Every song section carries its own Suno style and production instructions in the bracketed header. Preserve these lyric lines verbatim when this song is the source; preserve the original song's section structure for covers, and do not add sections without permission.
+This section-by-section format is an example from one user's project. Other users can choose their own level of detail. Preserve approved lyrics and the source song's section structure for covers; do not add sections without permission.
 
 ```text
 [Intro: 120 BPM, Bb major, dreamy electronica, sparkling synth arpeggios, playful melodic female vocal samples, rhythmic DJ-style scratching, syncopated vocal chopping, warm synth bass, preserve original intro hook]
@@ -87,6 +87,6 @@ Supernova (my love for you, yeah)
 
 [End]
 ```
-## Cover control starting points
+## Example cover control values
 
-When supported by the account, start with audio influence `0.85`, style influence `0.70`, and weirdness `0.20`. These are adjustable recommendations for a faithful reimagining, not guarantees. Verify the controls are supported before submitting.
+The values audio influence `0.85`, style influence `0.70`, and weirdness `0.20` are specific to this user's example, not universal recommendations. Check the available controls and ranges, then follow the current user's preferences and goal. These values do not guarantee a musical result.

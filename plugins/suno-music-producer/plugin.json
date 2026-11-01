@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "suno-music-producer",
-  "version": "0.1.0",
-  "description": "Create faithful Suno songs and reimagined covers with Suno MCP and reusable production workflows.",
+  "version": "0.2.0",
+  "description": "Create and reimagine Suno music with a bundled MCP server and a personalized production workflow.",
   "author": {
     "name": "Waren Gonzaga",
     "url": "https://github.com/warengonzaga"
@@ -14,13 +14,13 @@
       "interface": {
         "displayName": "Suno Music Producer",
         "shortDescription": "Suno songs and covers with MCP",
-        "longDescription": "Create Suno songs and faithful reimagined covers using a bundled Suno MCP connection and a reusable skill that preserves source lyrics, melody, composition, arrangement, approved BPM and key, and section-specific production directions.",
+        "longDescription": "Create and reimagine Suno songs with a bundled MCP connection and a reusable skill that discovers each user's project preferences, preserves approved source material for covers, and verifies the available generation options.",
         "developerName": "Waren Gonzaga",
         "category": "Entertainment",
         "capabilities": ["Read", "Write"],
         "defaultPrompt": [
-          "Use Suno Music Producer to create a song using my established workflow.",
-          "Use Suno Music Producer to prepare a faithful Suno cover of my source track."
+          "Use Suno Music Producer to discover my preferences and create a song for my project.",
+          "Use Suno Music Producer to prepare a faithful cover using my project preferences."
         ]
       }
     }
