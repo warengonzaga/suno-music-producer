@@ -20,7 +20,9 @@ Suno Music Producer is a Codex plugin that helps people write original lyrics, c
 ### Requirements
 
 - Codex with plugin marketplace support.
-- A Suno account and authorization for the bundled MCP server, if prompted by Codex.
+- Access to Suno MCP and authorization if prompted by Codex. MCP access may be limited or invite-only.
+
+> **Suno MCP access:** Suno controls access to its MCP service, and it may not be available to every user. Installing this plugin does not grant or guarantee access. Without Suno MCP access, the skill can still help prepare original lyrics, prompts, and production instructions, but it cannot generate songs through Suno.
 
 ### Install
 
