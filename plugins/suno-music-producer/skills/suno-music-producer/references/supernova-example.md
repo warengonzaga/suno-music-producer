@@ -90,5 +90,3 @@ Supernova (my love for you, yeah)
 ## Cover control starting points
 
 When supported by the account, start with audio influence `0.85`, style influence `0.70`, and weirdness `0.20`. These are adjustable recommendations for a faithful reimagining, not guarantees. Verify the controls are supported before submitting.
-
-

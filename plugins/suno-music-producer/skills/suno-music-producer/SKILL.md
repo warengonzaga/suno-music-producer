@@ -29,4 +29,3 @@ When the bundled Suno MCP connection is available, inspect its live tool schemas
 ## Output checklist
 
 For a requested generation, the ready-to-submit brief must include the combined Style prompt, complete lyrics with production headers, title, verified source/workspace, selected voice and model, and recommended supported controls. Check all of it before consuming credits. After generation, report only verified status and returned links.
-
