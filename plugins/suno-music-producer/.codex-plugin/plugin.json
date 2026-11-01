@@ -1,5 +1,5 @@
 {
   "name": "suno-music-producer",
-  "version": "0.1.0",
-  "description": "Create faithful Suno songs and reimagined covers with Suno MCP and reusable production workflows."
+  "version": "0.2.0",
+  "description": "Write, produce, and reimagine Suno songs with a bundled MCP server and a personalized workflow."
 }
