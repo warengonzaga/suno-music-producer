@@ -19,10 +19,22 @@ Treat this as a personalized producer, not a preset for one artist or song.
 - For a new workflow, infer what is clear from the request, then ask only about choices that materially affect the result. Offer a concise recommendation when the user has no preference.
 - Do not write a persistent preference profile or modify a workspace to store one unless the user asks.
 
+## Songwriting
+
+This skill can write original songs as well as prepare lyrics for Suno. Discover how the current songwriter wants to work; do not make one creator's method the default.
+
+- Follow the requested collaboration style. If the user asks for a complete draft, provide a complete draft. If they prefer co-writing, work at the requested pace and lock sections they approve. Ask only when the desired process or a missing story detail materially affects the lyrics.
+- For original songs, develop the idea into a clear premise, emotional direction, title or hook, suitable song structure, and original lyrics. Match language, point of view, genre, tone, audience, and lyric detail to the user's request and active project.
+- Let the user choose the structure and writing method. A chorus-first, story-driven, section-by-section approval process is available as one optional method in [references/story-driven-songwriting.md](references/story-driven-songwriting.md); use it only when the user selects it or their confirmed project preferences call for it.
+- Check narrative consistency, natural phrasing, rhyme, meter, and singability when relevant. Treat syllable counts as a musical aid, not a rigid rule. Do not invent story facts that contradict the brief.
+- Preserve user-approved lyrics. Do not silently rewrite approved sections or alter supplied lyrics unless asked.
+- Keep writing and production separate. Once lyrics are approved, shape Suno's Style prompt, section-specific production headers, vocal delivery, instrumentation, and arrangement around them. Do not rewrite lyrics just to fit a new production direction.
+- Write original material; do not copy lyrics from other songs or claim the words are by a named artist.
+
 ## Required workflow
 
 1. **Identify the project and source.** Determine the intended artist/project and track from the request and available context. For covers, find and verify the exact source clip and its existing workspace before generation. Resolve ambiguous matches first. Never create duplicate workspaces; never create or delete a workspace without explicit permission. Do not silently move songs between workspaces.
-2. **Preserve the source when requested.** For reimagined covers, preserve the user's approved lyrics, melody, composition, arrangement, section order, ad-libs, tempo, key, and production requirements unless the user asks to change them. Do not add, remove, reorder, or rename sections without permission. Pass the complete approved lyrics when the Suno operation requires them.
+2. **Preserve the source when requested.** For original songs, use the songwriting workflow above. For reimagined covers, preserve the user's approved lyrics, melody, composition, arrangement, section order, ad-libs, tempo, key, and production requirements unless the user asks to change them. Do not add, remove, reorder, or rename sections without permission. Pass the complete approved lyrics when the Suno operation requires them.
 3. **Select model and voice for this project.** Check currently available model and voice options. Use a model or named voice the user requested, or an approved choice already established for this same project. Do not force a single model, artist voice, tempo, key, genre, or prompt format as a universal default. If no choice is established, recommend an available option that fits the user's goals; ask only when the choice materially changes the desired result. Use an exact ready voice match, and never substitute another voice silently. Do not create or modify a voice unless the user asks.
 4. **Prepare Suno prompts in the user's format.** Discover whether the user prefers exclusions combined in the Style prompt or entered in Suno's separate Excluded Styles field, and follow the preference when the live interface supports it. Do not treat a format shown in an example as mandatory. If no format preference is known, use the supported fields in a clear, conventional way. Keep each prompt within Suno's current field limits and count characters when a limit applies.
 5. **Write song-specific lyrics and section directions.** Preserve approved lyric lines verbatim. Use the user's preferred format for bracketed section headers. When detailed production directions are wanted, make each song section's header specific to that section; cover vocal delivery (or no vocals), instrumentation, energy/groove, effects, transitions, and restrictions where relevant. Do not add sections without permission.
@@ -38,4 +50,4 @@ Treat this as a personalized producer, not a preset for one artist or song.
 
 ## Output checklist
 
-For a generation request, prepare the complete lyrics with the requested section directions, the selected prompt format, title, source/workspace when applicable, current model and voice choice, and supported controls. Make any unresolved assumptions visible before generation. Afterward, report verified status and returned links only.
+For an original songwriting request, provide the requested concept, title or hook, structure, lyrics, and collaboration notes. For a generation request, prepare the complete lyrics with the requested section directions, the selected prompt format, title, source/workspace when applicable, current model and voice choice, and supported controls. Make any unresolved assumptions visible before generation. Afterward, report verified status and returned links only.

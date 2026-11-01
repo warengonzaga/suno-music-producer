@@ -3,11 +3,12 @@
 ![Suno Music Producer banner — Faithful Suno production, guided by your workflow](https://ghrb.waren.build/render/banner?header=Suno+Music+Producer&subheader=Faithful+Suno+production%2C+guided+by+your+workflow&bg=090D24-33225F&color=FFFFFF&subheadercolor=D9E8FF&headerfont=Inter&subheaderfont=Inter&support=true&stats=false)
 <!-- Created with GitHub Repo Banner by Waren Gonzaga: https://ghrb.waren.build -->
 
-Suno Music Producer is a Codex plugin that helps people create and reimagine music through Suno. It bundles the Suno MCP connection with a reusable skill that learns preferences from each user's request, project, and feedback instead of imposing one artist's preset.
+Suno Music Producer is a Codex plugin that helps people write original lyrics, create songs, and reimagine music through Suno. It bundles the Suno MCP connection with a reusable skill that learns preferences from each user's request, project, and feedback instead of imposing one artist's preset.
 
 ## ✨ Features
 
 - Bundles Suno's remote MCP endpoint at https://api.suno.com/mcp with the production skill.
+- Helps write original songs, from concept and story through hooks, complete lyrics, and revisions, using each songwriter's preferred process.
 - Builds Style prompts and handles exclusions in the format each user prefers and Suno supports.
 - Creates song-specific lyrics section directions, from concise guidance to detailed vocals, instruments, energy, effects, and restrictions.
 - For covers, preserves the approved lyrics, melody, composition, arrangement, sections, BPM, key, and ad-libs unless you request changes.
@@ -32,13 +33,13 @@ Start a new Codex chat to use the skill and complete Suno authorization if promp
 
 ### First production request
 
-Ask Codex to use Suno Music Producer for a song or cover. Describe your goals and any preferences you already have; for a cover, identify the source track and what should be preserved. The skill will use available project context to shape a workflow for you and flag only choices that need your input.
+Ask Codex to use Suno Music Producer to write an original song, produce an existing lyric draft, or prepare a cover. Describe your goals and any preferences you already have; for a cover, identify the source track and what should be preserved. The skill will use available project context to shape a workflow for you and flag only choices that need your input.
 
 ## 📖 Usage
 
 Example request:
 
-    Use Suno Music Producer to create or reimagine a song for my project. Check my existing workspace and source if relevant, follow my approved preferences, prepare complete lyrics and section directions, recommend suitable available Suno options, and generate only when I ask.
+    Use Suno Music Producer to help me write an original song from this idea: [your idea]. Discover my preferred collaboration process, develop original lyrics, check singability, and prepare the Suno materials. Keep my approved preferences for this project.
 
 The skill discovers your preferred Style and exclusions format, prepares complete lyrics with project-specific section directions, and recommends supported controls. It verifies a generated clip's status and reports a song link only when Suno returns one and the result is playable.
 
@@ -47,6 +48,7 @@ See the [Supernova production example](plugins/suno-music-producer/skills/suno-m
 ## 📚 Documentation
 
 - [Suno Music Producer skill](plugins/suno-music-producer/skills/suno-music-producer/SKILL.md) — workflow, cover preservation, prompt construction, preflight, and result verification.
+- [Story-driven songwriting workflow](plugins/suno-music-producer/skills/suno-music-producer/references/story-driven-songwriting.md) — one optional section-by-section writing method; the skill follows each songwriter's preferred process.
 - [Supernova (Reimagined) reference](plugins/suno-music-producer/skills/suno-music-producer/references/supernova-example.md) — an example combined Style prompt and full section-by-section lyrics for one specific project.
 - [Codex plugin marketplace documentation](https://developers.openai.com/plugins/build/plugins) — adding a repository marketplace and installing a plugin.
 - [Clean README specification](https://github.com/wgtechlabs/clean-readme/blob/main/SPECIFICATION.md) — README structure and conformance guidance.
