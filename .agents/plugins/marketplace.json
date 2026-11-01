@@ -1,0 +1,20 @@
+{
+  "name": "suno-music-producer",
+  "plugins": [
+    {
+      "name": "suno-music-producer",
+      "source": {
+        "source": "local",
+        "path": "./plugins/suno-music-producer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Entertainment",
+      "interface": {
+        "displayName": "Suno Music Producer"
+      }
+    }
+  ]
+}
