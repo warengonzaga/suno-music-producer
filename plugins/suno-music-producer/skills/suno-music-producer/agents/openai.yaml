@@ -1,0 +1,4 @@
+interface:
+  display_name: Suno Music Producer
+  short_description: Create Suno songs and covers with MCP.
+  default_prompt: Use Suno Music Producer to prepare or generate a song or cover.
