@@ -21,11 +21,11 @@ Suno Music Producer is a Codex plugin for creating and reimagining songs through
 - Codex with plugin marketplace support.
 - A Suno account and authorization for the bundled MCP server, if prompted by Codex.
 
-### Install from the current feature branch
+### Install from the dev branch
 
-The plugin is available on the feature branch while its pull request is under review. Add the repository as a marketplace:
+The plugin has been merged to dev and is available there while awaiting a release to main. Add the repository as a marketplace:
 
-    codex plugin marketplace add warengonzaga/suno-music-producer@feature/suno-music-producer
+    codex plugin marketplace add warengonzaga/suno-music-producer@dev
 
 Restart the Codex desktop app, open **Plugins Directory**, select the Suno Music Producer marketplace, and install Suno Music Producer. Complete Suno authorization if prompted. Confirm the plugin and its Suno connection appear in Codex.
 
