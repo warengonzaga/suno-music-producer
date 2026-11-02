@@ -9,6 +9,16 @@ Use this skill when the user wants to prepare, refine, or generate music with Su
 
 Inspect live Suno MCP schemas and allowed values before relying on fields, models, voices, or controls. Never put credentials in prompts, skill files, or plugin configuration.
 
+## Required output from the first lyric draft
+
+For original Suno songwriting, include production direction from the **first lyric draft**, including partial drafts during co-writing. Do not wait for lyric approval or a separate request for Suno materials.
+
+- Present distinct, copyable **Title**, **Style**, and **Lyrics** fields. A working title and provisional Style are sufficient during drafting; include only the lyric sections being worked on.
+- **Style** defines the song-wide genre, mood, vocal character, and production sound. Every musical section in **Lyrics** needs a bracketed header specifying concrete **vocal delivery (or instrumental treatment), instrumentation, and energy/groove** consistent with that Style.
+- Repeat complete directions for repeated sections. Bare labels such as `[Chorus]` or references such as `[Chorus: same as above]` are incomplete.
+- Provide plain lyrics without production directions only when the user explicitly requests a lyrics-only draft. This exception applies to drafting, not to a subsequent custom-lyrics generation payload.
+- Before returning a draft or calling Suno, check the actual Style and Lyrics fields against this contract and revise incomplete headers. A summary outside Lyrics does not replace the headers. These are agent instructions, not an automatic API validator or a guarantee that Suno will follow every cue.
+
 ## Discover the user's workflow
 
 Treat this as a personalized producer, not a preset for one artist or song.
@@ -44,7 +54,7 @@ This skill can write original songs as well as prepare lyrics for Suno. Discover
 - Keep lyric formatting clean and readable: put each line on its own, separate stanzas with a blank line, and use a blank line after line 4 of any 8-line chorus so it reads as two four-line halves. Preserve that break in repeated choruses and in Suno-ready lyrics.
 - Keep syllable counts and rhyme letters out of the lyric text. When presenting an original draft, add a compact craft note outside the lyrics with each section's syllable pattern and rhyme scheme; call out any intentional variation. Do not add those notes to the Suno lyrics field.
 - Preserve user-approved lyrics. Do not silently rewrite approved sections or alter supplied lyrics unless asked.
-- Keep writing and production separate. Once lyrics are approved, shape Suno's Style prompt, section-specific production headers, vocal delivery, instrumentation, and arrangement around them. Do not rewrite lyrics just to fit a new production direction.
+- Include provisional Style and section production headers alongside the first lyric draft. Revise lyric wording and production directions independently: after lyric approval, change only the Style and headers for production revisions unless the user also requests lyric changes. Do not rewrite lyrics just to fit a new production direction.
 - Write original material; do not copy lyrics from other songs or claim the words are by a named artist.
 
 ## Required workflow
@@ -53,22 +63,23 @@ This skill can write original songs as well as prepare lyrics for Suno. Discover
 2. **Preserve the source when requested.** For original songs, use the songwriting workflow above. For reimagined covers, preserve the user's approved lyrics, melody, composition, arrangement, section order, ad-libs, tempo, key, and production requirements unless the user asks to change them. Do not add, remove, reorder, or rename sections without permission. Pass the complete approved lyrics when the Suno operation requires them.
 3. **Select model and voice for this project.** Check currently available model and voice options. Use a model or named voice the user requested, or an approved choice already established for this same project. Do not force a single model, artist voice, tempo, key, genre, or prompt format as a universal default. If no choice is established, recommend an available option that fits the user's goals; ask only when the choice materially changes the desired result. Use an exact ready voice match, and never substitute another voice silently. Do not create or modify a voice unless the user asks.
 4. **Prepare Suno prompts in the user's format.** Discover whether the user prefers exclusions combined in the Style prompt or entered in Suno's separate Excluded Styles field, and follow the preference when the live interface supports it. Do not treat a format shown in an example as mandatory. If no format preference is known, use the supported fields in a clear, conventional way. Keep each prompt within Suno's current field limits and count characters when a limit applies.
-5. **Write song-specific lyrics and section directions.** Preserve approved lyric lines verbatim. Use the user's preferred format for bracketed section headers. Apply the lyric craft and formatting checks above before delivery. For every original-song generation with custom lyrics, provide one song-wide Style prompt and section-specific production directions inside the bracketed header in Lyrics for every musical section. Keep these layers distinct: Style describes the overall sound; each section header steers vocal delivery, instrumentation, and energy/groove for that section. The audio-create interface has no separate per-section Style field, so put these directions in the Lyrics header. Every musical-section header must give concrete vocal delivery (or instrumental treatment), instrumentation, and energy/groove; add effects, transitions, or restrictions where useful. Repeat directions for repeated sections instead of relying on Suno to infer them. Preserve approved lyric lines verbatim; change only section headers for production. Present a Suno-ready handoff in distinct, copyable fields: show the global prompt under **Style** and the complete sectioned lyric payload under **Lyrics**. Show **Excluded Styles** separately only when the user prefers that format and the live interface supports it; if exclusions belong in the Style field, keep them there. Keep lyric-only requests at the level of production detail the user requested. Do not add sections without permission.
+5. **Write song-specific lyrics and section directions.** Apply the first-draft output contract above and the lyric craft checks before delivery. Preserve approved lyric lines verbatim and use the user's preferred bracketed-header format. The audio-create interface has no separate per-section Style field, so put section production directions inside the Lyrics headers. Add effects, transitions, or restrictions where useful. Show **Excluded Styles** separately only when the user prefers that format and the live interface supports it; otherwise follow their supported exclusions format. Do not add sections without permission.
 
-   For a Suno-ready original song with custom lyrics, use this compact shape unless the user requests another supported field layout:
+   Example excerpt, not a default genre or section order. Adapt each header to the song's Style and repeat full directions for recurring sections:
 
    ```text
-   Title: ...
-   Style: [one global sound and production prompt]
-   Excluded Styles: [optional; use only when supported and preferred]
+   Title: Working title
+   Style: Warm P-pop with a solo male lead, bright synths, buoyant bass, and crisp dance-pop drums; reflective verses lifting into an upbeat chorus.
    Lyrics:
-   [Verse 1: vocal delivery, instrumentation, energy/groove]
+   [Verse 1: intimate conversational male lead, muted synth plucks and soft keys, restrained steady pulse]
    ...
-   [Chorus: vocal delivery, instrumentation, energy/groove]
+   [Chorus: bright melodic male lead, sparkling synths and punchy drums with buoyant bass, high-energy dance groove]
+   ...
+   [Chorus: bright melodic male lead, sparkling synths and punchy drums with buoyant bass, high-energy dance groove]
    ...
    ```
 
-   Quick compliance check: If the request already gives the subject, genre, vibe, and language, do not ask for them again. A Suno-ready custom-lyrics handoff passes only when Style and Lyrics are visibly separate and every musical section header in Lyrics explicitly directs vocal delivery (or instrumental treatment), instrumentation, and energy/groove. Otherwise, revise it before returning.
+   If the request already gives the subject, genre, vibe, and language, do not ask for them again. Honor a request to work on one section without drafting or adding the rest of the song.
 
 6. **Preflight before using credits.** Confirm the complete brief against the user's request: title, source and workspace, lyrics, section order, tempo/key, project preferences, prompt fields, available model/voice, and supported controls. For original-song generations with custom lyrics, inspect the exact generation payload: confirm a distinct song-wide Style prompt and verify that every musical-section header in Lyrics explicitly directs vocal delivery (or instrumental treatment), instrumentation, and energy/groove. Check repeated sections individually; do not rely on earlier headers. If any section is missing one of these directions, revise it before generation. Proceed only when the preflight passes, all required facts are clear, and the payload does not conflict with an approved requirement. If a required fact is unclear, a source is ambiguous, or a conflict exists, stop and resolve it first. Call a generation tool only after these checks pass and the user has requested generation.
 7. **Generate and verify.** Use the appropriate Suno MCP operation with the verified source and workspace. Wait for every returned clip ID to reach a final status. Share a song link only when Suno returns it and the result is playable. Distinguish a prepared brief, submitted generation, playable result, and completed song.
@@ -82,6 +93,6 @@ This skill can write original songs as well as prepare lyrics for Suno. Discover
 
 ## Output checklist
 
-- **Songwriting or lyric drafting only:** Provide the creative material the user requested, such as the concept, title or hook, structure, lyrics, and concise craft notes where useful. Do not imply that a generation was submitted.
+- **Songwriting or lyric drafting only:** From the first lyric draft, use distinct **Title**, **Style**, and **Lyrics** fields with complete section production headers, including for partial drafts. Omit production directions only for an explicit lyrics-only request. Keep craft notes outside Lyrics. Do not imply that a generation was submitted.
 - **Suno-ready preparation or generation:** Use distinct, copyable **Title**, **Style**, and **Lyrics** fields; include **Excluded Styles** as its own field only when supported and preferred. For original custom lyrics, include section-specific vocal delivery (or instrumental treatment), instrumentation, and energy/groove directions in every musical section header. Include source/workspace, model/voice, and controls when applicable to the task.
 - **After generation:** Report the actual clip status and share only playable links returned by Suno. For original custom-lyrics generations, include the global Style prompt and complete sectioned lyric payload that were sent.

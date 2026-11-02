@@ -10,7 +10,7 @@ Suno Music Producer is a Codex plugin that helps people write original lyrics, c
 - Bundles Suno's remote MCP endpoint at https://api.suno.com/mcp with the production skill.
 - Helps write original songs, from concept and story through hooks, complete lyrics, and revisions, using each songwriter's preferred process.
 - Builds Style prompts and handles exclusions in the format each user prefers and Suno supports.
-- Creates song-specific lyrics section directions, from concise guidance to detailed vocals, instruments, energy, effects, and restrictions.
+- Includes a global Style prompt and section-specific vocal, instrument, and energy directions from the first Suno lyric draft, including partial drafts; plain lyrics are available when explicitly requested.
 - For covers, preserves the approved lyrics, melody, composition, arrangement, sections, BPM, key, and ad-libs unless you request changes.
 - Checks existing source clips and workspaces, discovers the project's model and voice preferences, verifies current Suno options, and checks the complete brief before spending generation credits.
 - Includes Supernova (Reimagined) as one project-specific example at 120 BPM in Bb major; those settings are not global defaults.
