@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "suno-music-producer",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Write, produce, and reimagine Suno music with a bundled MCP server and a workflow tailored to each songwriter.",
   "author": {
     "name": "Waren Gonzaga",
