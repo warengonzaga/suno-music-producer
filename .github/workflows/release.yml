@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Plan release
+        id: plan
+        uses: wgtechlabs/release-build-flow-action@6df9cb42c24c296d902150d051a0b6be4422cccc # v1.8.0
+        with:
+          initial-version: 0.2.0
+          dry-run: true
+          changelog-enabled: false
+          sync-version-files: false
+
+      - name: Synchronize plugin manifest versions
+        if: steps.plan.outputs.version-bump-type != 'none'
+        env:
+          RELEASE_VERSION: ${{ steps.plan.outputs.version }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          version = os.environ["RELEASE_VERSION"]
+          paths = (
+              Path("plugins/suno-music-producer/plugin.json"),
+              Path("plugins/suno-music-producer/.codex-plugin/plugin.json"),
+          )
+
+          for path in paths:
+              original = path.read_text(encoding="utf-8")
+              manifest = json.loads(original)
+              if "version" not in manifest:
+                  raise ValueError(f"Missing version field in {path}")
+
+              updated, count = re.subn(
+                  r'("version"\s*:\s*")[^"]+(\")',
+                  lambda match: f"{match.group(1)}{version}{match.group(2)}",
+                  original,
+                  count=1,
+              )
+              if count != 1 or json.loads(updated).get("version") != version:
+                  raise ValueError(f"Could not update version in {path}")
+              path.write_text(updated, encoding="utf-8")
+          PY
+          git add plugins/suno-music-producer/plugin.json plugins/suno-music-producer/.codex-plugin/plugin.json
+
+      - name: Publish release
+        if: steps.plan.outputs.version-bump-type != 'none'
+        uses: wgtechlabs/release-build-flow-action@6df9cb42c24c296d902150d051a0b6be4422cccc # v1.8.0
+        with:
+          planned-version: ${{ steps.plan.outputs.version }}
+          planned-version-tag: ${{ steps.plan.outputs.version-tag }}
+          planned-version-bump-type: ${{ steps.plan.outputs.version-bump-type }}
+          planned-previous-version: ${{ steps.plan.outputs.previous-version }}
+          sync-version-files: false
