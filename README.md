@@ -66,6 +66,10 @@ Validate the JSON manifests with Python:
 
 These checks confirm JSON syntax only. They do not install the plugin, authenticate with Suno, or verify a live generation.
 
+### Releases
+
+Commits merged into `main` are released by the pinned [Release Build Flow Action](https://github.com/wgtechlabs/release-build-flow-action). It uses `0.2.0` as the initial version baseline, then uses Clean Commit types to select later version bumps. It updates `CHANGELOG.md`, creates a version tag, and publishes a GitHub Release. The workflow also synchronizes both plugin manifests because the action does not support `plugin.json` version files.
+
 ## 🤝 Contributing
 
 Contributions are welcome. Create a short-lived feature branch from dev and target pull requests to dev. Use the repository's Clean Commit format, and follow the review and release workflow in the repository instructions.
