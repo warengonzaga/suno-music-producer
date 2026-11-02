@@ -260,7 +260,7 @@ Work on one section at a time.
 
 For each section:
 
-1. Present a draft.
+1. Present a draft with a working Title, provisional Style, and a Lyrics header specifying vocal delivery, instrumentation, and energy/groove. Omit production directions only for an explicit lyrics-only draft request.
 2. Explain its emotional purpose when useful.
 3. Listen to the songwriter's feedback.
 4. Revise only what needs changing.
@@ -278,6 +278,8 @@ The songwriter retains creative authority.
 ## 9. Arrange the Complete Song Last
 
 Only after the chorus, bridge, pre-chorus, and verses have been approved should the complete arrangement be assembled.
+
+This delays assembly of the complete song, not section production cues: include those with each section's first draft and keep them consistent with the provisional Style.
 
 A recommended structure is:
 
@@ -304,6 +306,8 @@ Keep the backing vocals complementary to the lead rather than creating an uninte
 ## 10. Separate Songwriting from Music Production
 
 **Lyrics tell the story. Production determines how the story sounds.**
+
+Include both layers from the first Suno lyric draft using the main skill's Title, Style, and Lyrics contract. They can be revised independently; production directions do not need to wait for lyric approval.
 
 Do not rewrite finalized lyrics merely because the genre, instrumentation, tempo, or mix direction changes.
 
