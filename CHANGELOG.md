@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.2.1] - 2026-11-02
+
+### Changed
+
+- clarify Suno generation handoff (#11)
+- enforce section cues for Suno generation
+
 ## [0.2.0] - 2026-11-02
 
 ### Added
