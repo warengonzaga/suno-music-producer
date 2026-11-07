@@ -22,6 +22,7 @@ Here are some examples of songs produced using Suno Music Producer, with each so
 | Song | Key | BPM |
 | --- | --- | ---: |
 | [A Little Too Late by The Robot City](https://open.spotify.com/track/4Fud5dYRipgwPdFlJYYTSD) | C Major | 122 |
+| [Oh Oh I Do by Siren of the Stars](https://open.spotify.com/track/5futInONeFYLy4nrd8nThQ) | D♯/E♭ Major | 120 |
 
 ## 🚀 Getting Started
 
