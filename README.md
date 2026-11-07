@@ -15,6 +15,14 @@ Suno Music Producer is a Codex plugin that helps people write original lyrics, c
 - Checks existing source clips and workspaces, discovers the project's model and voice preferences, verifies current Suno options, and checks the complete brief before spending generation credits.
 - Includes Supernova (Reimagined) as one project-specific example at 120 BPM in Bb major; those settings are not global defaults.
 
+## 🎹 Produced Songs
+
+Here are some examples of songs produced using Suno Music Producer, with each song's key and BPM.
+
+| Song | Key | BPM |
+| --- | --- | ---: |
+| [A Little Too Late by The Robot City](https://open.spotify.com/track/4Fud5dYRipgwPdFlJYYTSD) | C Major | 122 |
+
 ## 🚀 Getting Started
 
 ### Requirements
